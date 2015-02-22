@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+      
+    <!-- mendefiniskan database apa beserta dialect khusus dari database tersebut-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!--mendefinisikan driver yang dipakai untuk database-->
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <!-- mendefinisikan URL connection ke database-->
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/L_Hibernate</property>
+    <!-- mendefifinisikan informasi username dan password database-->
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <!-- memerintahkan untuk menggenerate tabel yang akan dimapping secara otomatis-->
+    <!-- property create akan mendrop tabel yang ada utk diganti dengan tabel baru-->
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    <!-- memerintahkan hibernate untuk menampilkan query yang digenerate ke jendela output-->
+    <property name="hibernate.show_sql">true</property>
+    <!-- sql yang ditampilkan di format agar bagus dan mudah untuk dibaca-->
+    <property name="hibernate.format_sql">true</property>
+    <mapping class="com.agung.java.hibernate.Person"/>
+    
+  </session-factory>
+</hibernate-configuration>
